@@ -3,7 +3,6 @@ package controller
 import (
 	"context"
 	"fmt"
-	"log"
 
 	"github.com/xxhanxx/Xray-core/common/protocol"
 	"github.com/xxhanxx/Xray-core/core"
@@ -72,9 +71,6 @@ func (c *Controller) addUsers(users []*protocol.User, tag string) error {
 	}
 	for _, item := range users {
 		mUser, err := item.ToMemoryUser()
-
-		log.Printf(mUser.Email)
-
 
 		if err != nil {
 			return err

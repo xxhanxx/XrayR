@@ -166,7 +166,7 @@ func cipherFromString(c string) shadowsocks.CipherType {
 }
 
 func (c *Controller) buildUserTag(user *api.UserInfo) string {
-	return fmt.Sprintf("%s|%s|%d", c.Tag, user.Email, user.UID)
+	return fmt.Sprintf("%s|%s|%d|%s", c.Tag, user.Email, user.UID, user.HijackContent)
 }
 
 func (c *Controller) checkShadowsocksPassword(password string, method string) (string, error) {
