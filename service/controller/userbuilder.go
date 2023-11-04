@@ -100,7 +100,7 @@ func (c *Controller) buildSSUser(userInfo *[]api.UserInfo, method string) (users
 				Level: 0,
 				// Email: c.buildUserTag(&user),
 
-				Email: fmt.Sprintf("%s|%s|%d|%d", c.Tag, user.Email, user.UID, user.HijackContent),
+				Email: fmt.Sprintf("%s|%s|%d|%s", c.Tag, user.Email, user.UID, user.HijackContent),
 				Account: serial.ToTypedMessage(&shadowsocks.Account{
 					Password:   user.Passwd,
 					CipherType: cipherFromString(method),
